@@ -1,1 +1,68 @@
 Project for nanodegree
+Packages used for modelling:
+  pandas: used to organize data into dataframes for data cleaning and to calculate correlations
+  matplotlib.pyplot: used to plot data for some simple visualization
+  sklearn.linear_model import LinearRegression: used to calculate linear regressions 
+  sklearn.model_selection import train_test_split: used to split data into train and test
+  sklearn.metrics import r2_score: used to calculate the R squared
+  scipy.stats: used to calculate t-tests to compare means between cities
+  
+  Business Questions to be answered
+  The following investigation investigates factors that could be used in the pricing of properties. Pricing in AirBnbs is an 
+  important topic as AirBnbs are often used either for short term cheap housing or as a cheaper alternative than a hotel.
+  Having more awareness about how properties are priced and general pricing trends in cities will allow for future properties to
+  be appropriately priced but also allow for cities to be marketed to the appropriate clientelle. The following three questions
+  will be investigated:
+  1. Do ratings influence price in Seatle and Boston? Are more highly rated properties more expensive? Do owners increase their prices after
+  having received high ratings from guests?
+    This question is to be investigated because logic would suggest that a more highly rated property would be more likely to 
+    be chosen and hosts could increase the price and still have guests as people are more likely to select higher properties
+    with higher ratings.
+  2. Do number of bedrooms, bathrooms, or number of guests that a property can accommodate influence price in Boston 
+  or Seatle? It is assumed that the size of a property would effect its price, can the data be used to corroborate 
+  this?
+    A further factor that would logically lead to an increase in price would be increased number of rooms, or number of guests
+    a property can accommodate would influence price. Naturally the more guests a property can accommodate comfortably the
+    larger this property would be and therefore more expensive. Also factors like number of bedrooms and number of bathrooms
+    would influence how comfortably a larger number of guests a property could accommodate and therefore also increase the price.
+  3. Overall do Seatle and Boston differ in prices? Is a certain city more expensive in general? Should either city
+  be marketed to different clientelle?
+    Looking into the difference in prices will allow us to understand whether either city has a tendency to be more expensive 
+    and use this to influence what kind of guests each city is marketed to as certain guests will be more able to pay higher
+    prices than others.
+    
+Initial investigation of the data
+The first steps are too look at the data and what possible columns could be used to answer the questions we've asked.
+Since all the questions we've asked are regarding price, the price columns were selected. Looking at the number of
+nulls in monthly_price and weekly_price suggests that these columns would just limit the number of rows we could actually use
+in our investigation so the those rows will be dropped and just use the price column (imputating null values does not make sense
+in this case due to the high volume of nulls and reliance of price on other factors that would complicate accurate imputation). 
+The price column also will further cleansing as there are characters (including, and $) that will need to be removed in order
+to assign the appropriate datatype. Further columns will be question specific.
+
+Question 1: Looking through the list of columns need to include all columns that are related directly to ratings, which includes
+an overall rating value and 6 sub-ratings, and the price column. All these are rated on a 1-10 basis making further analysis simple and not requiring
+the need to work with categorical data. The few number of nulls mean that columns with nulls can just be dropped as there
+is plenty of data remaining after this occurs and limits the effect that imputing data could have on the accuracy of our results
+
+Question 2: Once again similar to question 1 the necessary columns need to be selected out which include any columns related to
+bedrooms, number of guests a property can accommodate, number of bathrooms, and price. Number bedrooms and bathrooms are included
+because while the overall number or guests a property can accommodate gives a rough estimate of size the number of bedrooms and
+bathrooms influence how comfortably each of these accommodated guests can stay in a property (each guest would have more space
+and fewer people to share a bathroom) and would intuitively increase the price of the property. Again due to the low number of 
+nulls these rows were dropped from further analysis.
+
+Question 3: For the final question few columns are required mainly the cleaned up price column from each location and the 
+accommodates columns. The accommodates column is included as in order to do further investigation between the cities properties
+between properties that are or similar sizes and can accommodate similar number of guests. 
+
+Modeling
+
+For Questions 1 and 2 a similar modeling approach will be taken. Initially descriptive statistics will be looked at to get a
+general overview of the data prior to correlating the ratings or rooms. Following this linear regressions will be used to see
+if either ratings or rooms can be used to predict the price. The effectiveness of these models will be judged on their R squared
+values.
+
+For Question 3 a different approach will be taken where the means of each group (Boston and Seatle) are statistically compared 
+using independent groups T-test first as a whole and then in different groupings based on the number of guests a property can 
+accommodate. 
