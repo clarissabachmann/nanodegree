@@ -66,3 +66,92 @@ values.
 For Question 3 a different approach will be taken where the means of each group (Boston and Seatle) are statistically compared 
 using independent groups T-test first as a whole and then in different groupings based on the number of guests a property can 
 accommodate. 
+
+Results
+
+Question 1:
+Pearson Correlation between price and ratings: Seatle
+Looking at the correlations between price and ratings it seems that there is little relationship between price and ratings,
+however there were some higher correlations between the subcategories of ratings suggesting that certain components of the
+ratings could influence other rating scores. The subrating most strongly correlated to the overall rating is value suggesting
+that there is a possibility that value for money influences how a property is rated more than the other subcategories.
+
+Linear Regression of price and ratings: Seatle
+The R squared value returned when investigating whether ratings could be used to predict price is very low (0.014350710890825957)
+suggesting that ratings cannot be used to predict the price of a property.
+
+Pearson Correlation between price and ratings: Boston
+Looking at the correlations between price and ratings it seems that there is also little relationship between price and ratings,
+however they are slightly higher than in Seatle. Again like in Seatle, there are some stronger correlations between ratings and
+subratings categories with accuracy, cleanliness, and value all showing correlations above 0.7. This suggests that these 3
+categories influence the overall property rating more than the other subcategories.
+
+Linear Regression of price and ratings: Boston
+The R squared value returned when investigating whether ratings could be used to predict price is also very low in Boston
+(0.07960652680184144) suggesting that ratings cannot be used to predict the price of a property.
+
+Question 2:
+Pearson Correlation between price and rooms: Seatle
+Looking at the correlations between price and rooms it seems that there is a bit of relationship between price and rooms, while
+it is isn't strong it is clearly higher than the general correlation between price and ratings. The highest correlation concerning
+price is between price and accommodates. The highest correlation is between bedrooms and number of guests accommodated. This is
+to be expected as the more bedrooms the more guests a property can accommodate. 
+
+Linear Regression of price and rooms: Seatle
+The R squared value returned when investigating whether rooms could be used to predict price is higher than those concerning 
+price and ratings (0.4843539870914997) suggesting that rooms are more effective to predict price than ratings. However the 
+value is still not very high suggesting that there are other factors that can better predict pricing of properties.
+
+Pearson Correlation between price and rooms: Boston
+Looking at the correlations between price and rooms in Boston the correlations are generally lower than in Seatle. While they
+are higher than the correlation between price and ratings they are still all below 0.5 except for the correlation between
+guests accommodated and bedrooms which is a logical correlation. This suggests that number of rooms or guests accommodated
+is less related to price than in Seatle.
+
+Linear Regression of price and rooms: Boston
+The R squared value returned between price and rooms rooms is lower than its equivalent in Seatle (0.26678473538724456)
+suggesting number of rooms is a worse predictor of price in Boston than in Seatle. It is however higher than the R square value
+found when using ratings to predict price. The R squared is however still quite low suggesting that other factors would be
+better predictors of price than number of rooms.
+
+Question 3
+The third question investigates pricing between the two cities. Looking at the descriptive statistics we can see that Boston
+on average has higher prices than Seatle. The independent groups t-tests support this with a very low p value (2.80437e-56)
+showing that even at very stringent bounds of significance the groups have statistically different means. Further investigation
+was done concerning the difference in prices in the cities in different sizes of properties, as defined by number of guests a 
+property can house. The descriptive stats show that both cities have the most properties that are able to house between 2-5 
+guests and that mean prices do increase with increased property size. Boston, however, had one property in the 2-5 guest size
+range that had a very price (4000$). Such a strong outliar could influence the results and should be kept in mind when interpreting
+the results. Looking at the results of the independent samples t-tests the difference in means holds with very low p values
+for 1 guest accommodations (4.28051e-07), 2-5 guest accommodations (1.25995e-88), and 5-10 guest accommodations (2.26613e-10). 
+While these p values suggest a robust significance in means, it cannot be forgotten that sample size between the groups are not
+always equal and this could have implications in the validity of our results. Overall it can be said that Boston has more expensive
+AirBnBs than Seatle.
+
+Evaluation
+Question 1
+The results noted regarding our first question give us some interesting insights. The first insight we can gain from these results
+is that ratings do not seem to predict price at all. This says that ratings do not influence pricing in either city and having
+a more highly rated property does not make it more expensive for guests to stay. However looking at the correlation results for both
+cities suggests that certain subratings are more related to the overall rating other than ratings. For example the value subrating
+is relatively highly correlated to overall rating, suggesting that focusing on certain factors of a guests experience could have
+a higher influence on the overall rating a guests give. However further investigation is required to have a proper understanding
+about whether this relationship is statistically valid. 
+
+Question 2
+The results regarding our second question begin to show a divide between the two cities, Boston and Seatle. For both cities the 
+results show that number of bedrooms, bathrooms, and guests a property can accommodate are more highly correlated and more able
+to predict price than ratings. However while this trend is still relatively small in Boston, it is higher in Seatle. The R squared
+is just below 0.5 for Seatle, showing the the number of rooms are able to predict about 50% of the variance in the data, which 
+mean it has a noteable influence on the price of a property. The R squared is much lower in Boston suggesting that these factors
+have less of an influence on price of AirBnBs in Boston and that other factors influence price more.
+
+The results found answering the two first questions suggest that further analysis would be required to understand pricing in
+both cities. 
+
+Question 3
+The results regarding our third question clearly show that Boston is a more expensive city to rent an AirBnB in. This increase in
+price is consistent between all property sizes. This suggeststhat Boston as a city should be marketed to more a clientelle 
+that is able to afford these rates. The average increased prize and lack of predictive power of ratings and rooms on price in
+Boston could suggest that a possible further investigation concerning the luxury AirBnBs could yield some explanation about
+what influences pricing of properties in Boston.
