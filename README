@@ -119,7 +119,8 @@ The third question investigates pricing between the two cities. Looking at the d
 on average has higher prices than Seatle. The independent groups t-tests support this with a very low p value (2.80437e-56)
 showing that even at very stringent bounds of significance the groups have statistically different means. Further investigation
 was done concerning the difference in prices in the cities in different sizes of properties, as defined by number of guests a 
-property can house. The descriptive stats show that both cities have the most properties that are able to house between 2-5 
+property can house. This was done to avoid the influence of one city having more larger properties unfairly waiting average price. 
+The descriptive stats show that both cities have the most properties that are able to house between 2-5 
 guests and that mean prices do increase with increased property size. Boston, however, had one property in the 2-5 guest size
 range that had a very price (4000$). Such a strong outliar could influence the results and should be kept in mind when interpreting
 the results. Looking at the results of the independent samples t-tests the difference in means holds with very low p values
