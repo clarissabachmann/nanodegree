@@ -8,28 +8,28 @@ Packages used for modelling:
   scipy.stats: used to calculate t-tests to compare means between cities
   
   Business Questions to be answered
-  The following investigation investigates factors that could be used in the pricing of properties. Pricing in AirBnbs is an 
+  The following code investigates factors that could be used in the pricing of AirBnB properties. Pricing in AirBnbs is an 
   important topic as AirBnbs are often used either for short term cheap housing or as a cheaper alternative than a hotel.
   Having more awareness about how properties are priced and general pricing trends in cities will allow for future properties to
   be appropriately priced but also allow for cities to be marketed to the appropriate clientelle. The following three questions
   will be investigated:
-  1. Do ratings influence price in Seatle and Boston? Are more highly rated properties more expensive? Do owners increase their prices after
-  having received high ratings from guests?
-    This question is to be investigated because logic would suggest that a more highly rated property would be more likely to 
-    be chosen and hosts could increase the price and still have guests as people are more likely to select higher properties
-    with higher ratings.
+  1. Do ratings influence price in Seattle and Boston? Are more highly rated properties more expensive? Do owners increase their prices after
+     having received high ratings from guests?
+     This question is to be investigated because logic would suggest that a more highly rated property would be more likely to 
+     be chosen and hosts could increase the price and still have guests as people are more likely to select higher properties
+     with higher ratings.
   2. Do number of bedrooms, bathrooms, or number of guests that a property can accommodate influence price in Boston 
-  or Seatle? It is assumed that the size of a property would effect its price, can the data be used to corroborate 
-  this?
-    A further factor that would logically lead to an increase in price would be increased number of rooms, or number of guests
-    a property can accommodate would influence price. Naturally the more guests a property can accommodate comfortably the
-    larger this property would be and therefore more expensive. Also factors like number of bedrooms and number of bathrooms
-    would influence how comfortably a larger number of guests a property could accommodate and therefore also increase the price.
-  3. Overall do Seatle and Boston differ in prices? Is a certain city more expensive in general? Should either city
-  be marketed to different clientelle?
-    Looking into the difference in prices will allow us to understand whether either city has a tendency to be more expensive 
-    and use this to influence what kind of guests each city is marketed to as certain guests will be more able to pay higher
-    prices than others.
+     or Seattle? It is assumed that the size of a property would effect its price, can the data be used to corroborate 
+     this?
+     A further factor that would logically lead to an increase in price would be increased number of rooms, or number of guests
+     a property can accommodate would influence price. Naturally the more guests a property can accommodate comfortably the
+     larger this property would be and therefore more expensive. Also factors like number of bedrooms and number of bathrooms
+     would influence how comfortably a larger number of guests a property could accommodate and therefore also increase the price.
+  3. Overall do Seattle and Boston differ in prices? Is a certain city more expensive in general? Should either city
+     be marketed to different clientelle?
+     Looking into the difference in prices will allow us to understand whether either city has a tendency to be more expensive 
+     and use this to influence what kind of guests each city is marketed to as certain guests will be more able to pay higher
+     prices than others.
     
 Initial investigation of the data
 The first steps are too look at the data and what possible columns could be used to answer the questions we've asked.
@@ -63,26 +63,26 @@ general overview of the data prior to correlating the ratings or rooms. Followin
 if either ratings or rooms can be used to predict the price. The effectiveness of these models will be judged on their R squared
 values.
 
-For Question 3 a different approach will be taken where the means of each group (Boston and Seatle) are statistically compared 
+For Question 3 a different approach will be taken where the means of each group (Boston and Seattle) are statistically compared 
 using independent groups T-test first as a whole and then in different groupings based on the number of guests a property can 
 accommodate. 
 
 Results
 
 Question 1:
-Pearson Correlation between price and ratings: Seatle
+Pearson Correlation between price and ratings: Seattle
 Looking at the correlations between price and ratings it seems that there is little relationship between price and ratings,
 however there were some higher correlations between the subcategories of ratings suggesting that certain components of the
 ratings could influence other rating scores. The subrating most strongly correlated to the overall rating is value suggesting
 that there is a possibility that value for money influences how a property is rated more than the other subcategories.
 
-Linear Regression of price and ratings: Seatle
+Linear Regression of price and ratings: Seattle
 The R squared value returned when investigating whether ratings could be used to predict price is very low (0.014350710890825957)
 suggesting that ratings cannot be used to predict the price of a property.
 
 Pearson Correlation between price and ratings: Boston
 Looking at the correlations between price and ratings it seems that there is also little relationship between price and ratings,
-however they are slightly higher than in Seatle. Again like in Seatle, there are some stronger correlations between ratings and
+however they are slightly higher than in Seattle. Again like in Seattle, there are some stronger correlations between ratings and
 subratings categories with accuracy, cleanliness, and value all showing correlations above 0.7. This suggests that these 3
 categories influence the overall property rating more than the other subcategories.
 
@@ -91,13 +91,13 @@ The R squared value returned when investigating whether ratings could be used to
 (0.07960652680184144) suggesting that ratings cannot be used to predict the price of a property.
 
 Question 2:
-Pearson Correlation between price and rooms: Seatle
+Pearson Correlation between price and rooms: Seattle
 Looking at the correlations between price and rooms it seems that there is a bit of relationship between price and rooms, while
 it is isn't strong it is clearly higher than the general correlation between price and ratings. The highest correlation concerning
 price is between price and accommodates. The highest correlation is between bedrooms and number of guests accommodated. This is
 to be expected as the more bedrooms the more guests a property can accommodate. 
 
-Linear Regression of price and rooms: Seatle
+Linear Regression of price and rooms: Seattle
 The R squared value returned when investigating whether rooms could be used to predict price is higher than those concerning 
 price and ratings (0.4843539870914997) suggesting that rooms are more effective to predict price than ratings. However the 
 value is still not very high suggesting that there are other factors that can better predict pricing of properties.
@@ -106,17 +106,17 @@ Pearson Correlation between price and rooms: Boston
 Looking at the correlations between price and rooms in Boston the correlations are generally lower than in Seatle. While they
 are higher than the correlation between price and ratings they are still all below 0.5 except for the correlation between
 guests accommodated and bedrooms which is a logical correlation. This suggests that number of rooms or guests accommodated
-is less related to price than in Seatle.
+is less related to price than in Seattle.
 
 Linear Regression of price and rooms: Boston
-The R squared value returned between price and rooms rooms is lower than its equivalent in Seatle (0.26678473538724456)
-suggesting number of rooms is a worse predictor of price in Boston than in Seatle. It is however higher than the R square value
+The R squared value returned between price and rooms rooms is lower than its equivalent in Seattle (0.26678473538724456)
+suggesting number of rooms is a worse predictor of price in Boston than in Seattle. It is however higher than the R square value
 found when using ratings to predict price. The R squared is however still quite low suggesting that other factors would be
 better predictors of price than number of rooms.
 
 Question 3
 The third question investigates pricing between the two cities. Looking at the descriptive statistics we can see that Boston
-on average has higher prices than Seatle. The independent groups t-tests support this with a very low p value (2.80437e-56)
+on average has higher prices than Seattle. The independent groups t-tests support this with a very low p value (2.80437e-56)
 showing that even at very stringent bounds of significance the groups have statistically different means. Further investigation
 was done concerning the difference in prices in the cities in different sizes of properties, as defined by number of guests a 
 property can house. This was done to avoid the influence of one city having more larger properties unfairly waiting average price. 
@@ -127,7 +127,7 @@ the results. Looking at the results of the independent samples t-tests the diffe
 for 1 guest accommodations (4.28051e-07), 2-5 guest accommodations (1.25995e-88), and 5-10 guest accommodations (2.26613e-10). 
 While these p values suggest a robust significance in means, it cannot be forgotten that sample size between the groups are not
 always equal and this could have implications in the validity of our results. Overall it can be said that Boston has more expensive
-AirBnBs than Seatle.
+AirBnBs than Seattle.
 
 Evaluation
 Question 1
@@ -140,10 +140,10 @@ a higher influence on the overall rating a guests give. However further investig
 about whether this relationship is statistically valid. 
 
 Question 2
-The results regarding our second question begin to show a divide between the two cities, Boston and Seatle. For both cities the 
+The results regarding our second question begin to show a divide between the two cities, Boston and Seattle. For both cities the 
 results show that number of bedrooms, bathrooms, and guests a property can accommodate are more highly correlated and more able
-to predict price than ratings. However while this trend is still relatively small in Boston, it is higher in Seatle. The R squared
-is just below 0.5 for Seatle, showing the the number of rooms are able to predict about 50% of the variance in the data, which 
+to predict price than ratings. However while this trend is still relatively small in Boston, it is higher in Seattle. The R squared
+is just below 0.5 for Seattle, showing the the number of rooms are able to predict about 50% of the variance in the data, which 
 mean it has a noteable influence on the price of a property. The R squared is much lower in Boston suggesting that these factors
 have less of an influence on price of AirBnBs in Boston and that other factors influence price more.
 
